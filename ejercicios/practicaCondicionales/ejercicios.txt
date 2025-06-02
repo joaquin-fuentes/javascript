@@ -37,18 +37,28 @@ Mostrá al usuario un menú de opciones usando prompt() con este formato:
 1 - Consultar saldo  
 2 - Retirar dinero  
 3 - Depositar dinero  
-4 - Salir
+4 - Ver últimos movimientos  
+5 - Cambiar clave  
+6 - Transferir dinero  
+7 - Salir
+
 
 Convertí la opción ingresada a número usando parseInt().
 
 Usá una estructura switch para mostrar por consola el mensaje correspondiente a cada opción:
 
-Si elige 1, mostrar: "Mostrando saldo...".
+Si elige 1, mostrar: "Mostrando saldo disponible...".
 
-Si elige 2, mostrar: "Procediendo al retiro de dinero...".
+Si elige 2, mostrar: "Iniciando proceso de retiro...".
 
-Si elige 3, mostrar: "Preparando depósito...".
+Si elige 3, mostrar: "Depósito en curso...".
 
-Si elige 4, mostrar: "Gracias por usar el cajero. ¡Hasta luego!".
+Si elige 4, mostrar: "Cargando últimos movimientos...".
 
-En cualquier otro caso, mostrar: "Opción inválida. Intente de nuevo."
+Si elige 5, mostrar: "Redirigiendo para cambiar la clave...".
+
+Si elige 6, mostrar: "Preparando transferencia...".
+
+Si elige 7, mostrar: "Gracias por usar el cajero. ¡Hasta pronto!".
+
+En cualquier otro caso, mostrar: "Opción inválida. Por favor, seleccioná una opción del 1 al 7."
