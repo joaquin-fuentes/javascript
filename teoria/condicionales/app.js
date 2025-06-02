@@ -70,3 +70,11 @@ switch (banda) {
 }
 
 console.log(cancion);
+
+let opcion = parseInt(
+  prompt(
+    "Elija el número de la opción:\n" +
+      " 1 - Consultar saldo.\n" +
+      " 2 - Retirar dinero"
+  )
+);
