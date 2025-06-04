@@ -3,37 +3,22 @@
 Instrucciones:
 
 Pedí al usuario que ingrese su edad utilizando prompt().
-
 Convertí ese valor a número usando parseInt().
-
 Usá una estructura if / else if / else para mostrar por consola lo siguiente:
-
 Si la edad es mayor o igual a 18, mostrar: "Podés comprar".
-
 Si la edad es exactamente 17, mostrar: "Podés comprar si venís acompañado de tu padre/madre o tutor".
-
 Si la edad es menor a 17, mostrar: "No podés comprar, necesitás venir con un adulto mayor de edad".
-
 📌 2. Nivel de batería del celular
 Instrucciones:
-
 Pedí al usuario que ingrese el nivel de batería (un número del 0 al 100) usando prompt().
-
 Convertí ese valor a número utilizando parseInt().
-
 Usá una estructura if / else if / else para mostrar por consola uno de los siguientes mensajes, según el nivel de batería ingresado:
-
 Si el valor es mayor o igual a 80, mostrar: "Batería llena 🔋".
-
 Si el valor es mayor o igual a 30, mostrar: "Batería media ⚠️".
-
 Si el valor es menor a 30, mostrar: "Batería baja, conectá el cargador 🔌".
-
 📌 3. Menú de cajero automático (con switch)
 Instrucciones:
-
 Mostrá al usuario un menú de opciones usando prompt() con este formato:
-
 1 - Consultar saldo  
 2 - Retirar dinero  
 3 - Depositar dinero  
@@ -41,18 +26,11 @@ Mostrá al usuario un menú de opciones usando prompt() con este formato:
 5 - Cambiar clave  
 6 - Transferir dinero  
 7 - Salir
-
-
 Convertí la opción ingresada a número usando parseInt().
-
 Usá una estructura switch para mostrar por consola el mensaje correspondiente a cada opción:
-
 Si elige 1, mostrar: "Mostrando saldo disponible...".
-
 Si elige 2, mostrar: "Iniciando proceso de retiro...".
-
 Si elige 3, mostrar: "Depósito en curso...".
-
 Si elige 4, mostrar: "Cargando últimos movimientos...".
 
 Si elige 5, mostrar: "Redirigiendo para cambiar la clave...".
