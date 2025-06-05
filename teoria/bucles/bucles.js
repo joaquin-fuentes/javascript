@@ -5,21 +5,20 @@
 // console.log("Hola mundo 5");
 
 // FOR
-
-// for (let i = 1; i <= 10; i++) {
-//   console.log("Hola mundo", i);
-// }
-// console.log("///////////////////////////////////");
-// for (let i = 2; i <= 10; i++) {
-//   if (i % 2 === 0) {
-//     console.log("Hola mundo", i);
-//   } else {
-//     console.log("El número", i, "es impar");
-//   }
-//   if (i === 5) {
-//     console.log("Llegamos al número", i);
-//   }
-// }
+let palabra = "joaquin"
+for (let i = 0; i < palabra.length; i++) {
+  console.log("Hola mundo", i);
+}
+for (let i = 2; i <= 10; i++) {
+  if (i % 2 === 0) {
+    console.log("Hola mundo", i);
+  } else {
+    console.log("El número", i, "es impar");
+  }
+  if (i === 5) {
+    console.log("Llegamos al número", i);
+  }
+}
 
 // WHILE o MIENTRAS
 
