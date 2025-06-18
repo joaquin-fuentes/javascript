@@ -8,7 +8,7 @@ function saludar() {
 function saludarConNombre(nombre, edad) {
   console.log("Hola, mi nombre es", nombre, "y tengo ", edad, "años.");
 }
-// saludarConNombre("Joaquin", 30);
+//  saludarConNombre("Joaquin", 30);
 
 // function multiplicar() {
 //   let resultado = 2 * 8;
