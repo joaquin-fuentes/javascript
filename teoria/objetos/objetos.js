@@ -34,7 +34,9 @@ const personas = [
 ];
 
 personas.forEach((persona) => {
-  console.log(persona.nombre, "tiene", persona.edad, "años.");
+  //   console.log(persona.nombre, "tiene", persona.edad, "años.");
+  //   template string
+  console.log(`${persona.nombre} tiene ${persona.edad} años`);
   return;
 });
 
