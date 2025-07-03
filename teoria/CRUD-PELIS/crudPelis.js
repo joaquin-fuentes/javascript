@@ -1,11 +1,21 @@
+// ================================
+// 🎬 CRUD de Películas con Menú 🧩
+// ================================
 let peliculas = [];
 recuperarPeliculasDesdeLocalStorage();
 agregarPeliculasDeEjemploSiEsNecesario();
 
+// ===========================
+// 💾 Guardar en localStorage
+// ===========================
 function guardarEnLocalStorage() {
   const peliculasJSON = JSON.stringify(peliculas);
   localStorage.setItem("peliculas", peliculasJSON);
 }
+
+// ===========================
+// 🧠 Cargar desde localStorage
+// ===========================
 function recuperarPeliculasDesdeLocalStorage() {
   const peliculasRecuperadas = localStorage.getItem("peliculas");
   if (peliculasRecuperadas) {
@@ -20,7 +30,9 @@ function agregarPeliculasDeEjemploSiEsNecesario() {
     agregarPeli("Capitán América", "Pablo Torres", 2012, 5);
   }
 }
-// CREATE
+// ===========================
+// 🟢 CREATE - Agregar película
+// ===========================
 function agregarPeli(titulo, director, anio, calificacion) {
   // recuperar antes de modificar para evitar sobrescribir
   recuperarPeliculasDesdeLocalStorage();
@@ -43,17 +55,23 @@ function agregarPeli(titulo, director, anio, calificacion) {
   console.log("✅ Película agregada:", nuevaPelicula);
 }
 
-// READ
+// ===========================
+// 🔵 READ - Listar películas
+// ===========================
 function listarPelis(pelis) {
   recuperarPeliculasDesdeLocalStorage();
   console.log("🎬 Lista de películas:");
   pelis.forEach((pelicula, index) => {
-    const { titulo, director, anio, calificacion } = pelicula;
+    const { titulo, director, anio, calificacion, id } = pelicula;
     console.log(
-      `${index + 1} - ${titulo}, ${director}, ${anio}, ${calificacion}`
+      `${index + 1} - ${titulo}, ${director}, ${anio}, ${calificacion}, ${id}`
     );
   });
 }
+
+// ==============================
+// 🔍 READ - Buscar por título
+// ==============================
 function buscarPeliPorTitulo(nombrePeli) {
   recuperarPeliculasDesdeLocalStorage();
   const resultados = peliculas.filter((pelicula) =>
@@ -63,6 +81,9 @@ function buscarPeliPorTitulo(nombrePeli) {
   listarPelis(resultados);
 }
 
+// ==============================
+// 🟡 UPDATE - Calificación
+// ==============================
 function actualizarCalificacion() {
   const id = parseInt(
     prompt("Ingrese el id de la pelicula que quiere actualizar")
@@ -85,7 +106,9 @@ function actualizarCalificacion() {
     alert("❌ Película no encontrada con ese ID.");
   }
 }
-
+// ==============================
+// 🔴 DELETE - Eliminar por ID
+// ==============================
 function eliminarPelicula() {
   const id = parseInt(
     prompt("Ingrese el id de la pelicula que quiere ELIMINAR")
@@ -104,9 +127,64 @@ function eliminarPelicula() {
     alert("❌ Película no encontrada.");
   }
 }
-eliminarPelicula();
 
 // Realizar el switch para preguntar al usuario
 // que accion desea realizar y
 // mostrar por consola lo que el usuario eligio
-function mostrarMenu() {}
+// ==============================
+// 🚀 MENÚ PRINCIPAL
+// ==============================
+function mostrarMenu() {
+  const opcion = prompt(
+    "Por favor, seleccione una opcion \n" +
+      "1 - Agregar Película \n" +
+      "2 - Listar Películas \n" +
+      "3 - Buscar  por título \n" +
+      "4 - Actualizar calificacion de peli \n" +
+      "5 - Eliminar pelicula \n" +
+      "6 - Salir"
+  );
+
+  switch (opcion) {
+    case "1":
+      console.log("Agregar pelicula");
+      // Solicitar al usuario aqui por medio de promps
+      const titulo = prompt("Ingrese el titulo de la pelicula");
+      const director = prompt("Ingrese el director de la pelicula");
+      const anio = parseInt(prompt("Ingrese el anio de la pelicula"));
+      const calificacion = parseFloat(
+        prompt("Ingrese la calificacion de la pelicula")
+      );
+      agregarPeli(titulo, director, anio, calificacion);
+      break;
+    case "2":
+      console.log("Listar pelicula");
+      recuperarPeliculasDesdeLocalStorage();
+      listarPelis(peliculas);
+      break;
+    case "3":
+      console.log("Buscar pelicula por titulo");
+      const tituloBuscado = prompt(
+        "Ingrese el titulo de la pelicula que desea buscar"
+      );
+      buscarPeliPorTitulo(tituloBuscado);
+      break;
+    case "4":
+      console.log("ACtualizar calificacion de pelicula");
+      actualizarCalificacion();
+      break;
+    case "5":
+      console.log("Eliminar pelicula");
+      eliminarPelicula();
+      break;
+    case "6":
+      console.log("Salir");
+      alert("Adiosin!");
+      break;
+    default:
+      alert("Opcion inválida, elegí un número del 1 al 6.");
+      break;
+  }
+}
+
+mostrarMenu();
