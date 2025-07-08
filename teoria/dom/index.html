@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <h2>Ejemplo 1: Mostrar un saludo usando un prompt</h2>
@@ -18,6 +24,12 @@
       <li>Elemento original 1</li>
       <li>Elemento original 2</li>
     </ul>
+    <h3>EVENTOS</h3>
+    <button onclick="ejercicio3()" class="btn btn-primary">
+      Click aqui para ejercutar ejercicio 3
+    </button>
+    <br />
+    <button class="btn btn-danger" id="miBoton">prueba ejemplo 4</button>
     <script>
       // ejemplo 1
       function ejercicio1() {
@@ -57,6 +69,18 @@
       // recorrer el array de peliculas
       // por cada pelicula agregar un LI dentro de un ul
       // cada LI tendria la informacion de la pelicula
+
+      // ejemplo4
+      const boton = document.getElementById("miBoton");
+
+      boton.addEventListener("click", function () {
+        alert("Evento ejecutado desde addEventListener");
+      });
     </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
