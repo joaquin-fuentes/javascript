@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asincronismo</title>
+  </head>
+  <body>
+    <script>
+      //   console.log("Inicio");
+
+      //   setTimeout(() => {
+      //     console.log("Esto se muestra después de 2 segundos");
+      //   }, 4000);
+
+      //   console.log("Fin");
+
+      let contador = 5;
+
+      const intervalo = setInterval(() => {
+        console.log(`Contador: ${contador}`);
+        if (contador === 0) {
+            clearInterval(intervalo);
+        }
+        contador--;
+      }, 1000);
+    </script>
+  </body>
+</html>
