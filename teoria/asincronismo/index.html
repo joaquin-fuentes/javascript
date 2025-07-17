@@ -15,15 +15,86 @@
 
       //   console.log("Fin");
 
-      let contador = 5;
+      // let contador = 5;
 
-      const intervalo = setInterval(() => {
-        console.log(`Contador: ${contador}`);
-        if (contador === 0) {
-            clearInterval(intervalo);
+      // const intervalo = setInterval(() => {
+      //   console.log(`Contador: ${contador}`);
+      //   if (contador === 0) {
+      //       clearInterval(intervalo);
+      //   }
+      //   contador--;
+      // }, 1000);
+
+      // const personajes = [
+      //   {
+      //     id: 1,
+      //     nombre: "Goku",
+      //     poderEspecial: "Kamehameha",
+      //   },
+      //   {
+      //     id: 2,
+      //     nombre: "Vegeta",
+      //     poderEspecial: "Final Flash",
+      //   },
+      //   {
+      //     id: 3,
+      //     nombre: "Piccolo",
+      //     poderEspecial: "Makankosappo (Cañón de Rayo Especial)",
+      //   },
+      // ];
+
+      // function mostrarPersonajes() {
+      //   setTimeout(() => {
+      //     return personajes;
+      //   }, 2000);
+      // }
+
+      const promesa = new Promise((resolve, reject) => {
+        const exito = false;
+        setTimeout(() => {
+          if (exito) {
+            resolve("¡La operación fue exitosa!");
+          } else {
+            reject("Hola");
+          }
+        }, 3000);
+      });
+
+      async function ejecutar() {
+        try {
+          // cuando salga bien
+          const resultado = await promesa;
+          console.log(resultado);
+        } catch (error) {
+          // cuando salga mal
+          console.log(error);
+        } finally {
+          // y este va siempre
+          console.log("Este mensaje se muestra siempre, salga bien, o mal");
         }
-        contador--;
-      }, 1000);
+      }
+      // ejecutar();
+      const link = "https://dragonball-api.com/api/characters";
+      // fetch(link)
+      //   .then((res) => res.json())
+      //   .then((data) => console.log(data.items))
+      //   .catch((error) => console.log(error));
+      let personajes = [];
+
+      async function obtenerPersonajes() {
+        try {
+          const res = await fetch("https://dragonball-api.com/api/characters");
+          const data = await res.json();
+          return data.items;
+          // agregarlos en un listado de tarjetas
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      async function mostrarPersonajes() {
+        personajes = await obtenerPersonajes();
+        console.log(personajes);
+      }
     </script>
   </body>
 </html>
